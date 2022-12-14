@@ -35,6 +35,16 @@ public class Book implements Parcelable {
         }
     };
 
+    public Book(int idBook, String titleBook, String annotation, String summary, String image, int idAuthor, int idGenre) {
+        IdBook = idBook;
+        TitleBook = titleBook;
+        Annotation = annotation;
+        Summary = summary;
+        Image = image;
+        IdAuthor = idAuthor;
+        IdGenre = idGenre;
+    }
+
     @Override
     public int describeContents() {
         return 0;

@@ -40,13 +40,12 @@ public class Adapter extends BaseAdapter {
 
         @SuppressLint("ViewHolder") View v = View.inflate(mContext, R.layout.item_book,null);
         TextView TitleBook = v.findViewById(R.id.tv_TitleBook);
-        TextView Author = v.findViewById(R.id.tv_Author);
-        TextView GenresBook = v.findViewById(R.id.tv_GenresBook);
-        ImageView Image = v.findViewById(R.id.Img);
+        //TextView Author = v.findViewById(R.id.tv_Author);
+        //TextView GenresBook = v.findViewById(R.id.tv_GenresBook);
+        //ImageView Image = v.findViewById(R.id.Img);
         Book book = bookList.get(position);
         TitleBook.setText(book.getTitleBook());
 
-
-        return null;
+        return v;
     }
 }
