@@ -22,8 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private Adapter pAdapter;
-    private final List<Book> listBooks = new ArrayList<>();
-    ListView lvBooks;
+    private List<Book> listBooks = new ArrayList<>();
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @SuppressLint("MissingInflatedId")
@@ -31,21 +30,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        lvBooks = findViewById(R.id.BD_Books);
 
         ListView ivProducts = findViewById(R.id.BD_Books);
         pAdapter = new Adapter(MainActivity.this, listBooks);
         ivProducts.setAdapter(pAdapter);
-        new GetAnim();
+        new Get().execute();
     }
 
-    class GetAnim extends AsyncTask<Void, Void, String>
+    class Get extends AsyncTask<Void, Void, String>
     {
         @Override
         protected String doInBackground(Void... voids) {
             try
             {
-                URL url = new URL("https://ngknn.ru:5001/NGKNN/api/Table_Books");
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/БорисоваЕА/api/Table_Books");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder result = new StringBuilder();
@@ -68,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
             {
                 listBooks.clear();
                 JSONArray tempArray = new JSONArray(s);
-                for (int i = 0;i<tempArray.length();i++)
+                for (int i = 0; i<tempArray.length(); i++)
                 {
                     JSONObject productJson = tempArray.getJSONObject(i);
-                    Book tempAnimal = new Book(
+                    Book tempBook = new Book(
                             productJson.getInt("IdBook"),
                             productJson.getString("TitleBook"),
                             productJson.getString("Annotation"),
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                             productJson.getInt("IdAuthor"),
                             productJson.getInt("IdGenre")
                     );
-                    listBooks.add(tempAnimal);
+                    listBooks.add(tempBook);
                     pAdapter.notifyDataSetInvalidated();
                 }
             } catch (Exception ignored) {

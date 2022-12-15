@@ -8,6 +8,12 @@ public class Author implements Parcelable {
     private int IdAuthor;
     private String Author;
 
+    public Author(Integer idAuthor, String author)
+    {
+        IdAuthor = idAuthor;
+        Author = author;
+    }
+
     protected Author(Parcel in) {
         IdAuthor = in.readInt();
         Author = in.readString();

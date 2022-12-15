@@ -9,6 +9,13 @@ public class Link implements Parcelable {
     private String Link;
     private int IdBook;
 
+    public Link(Integer idLink, String link, Integer idBook)
+    {
+        IdLink = idLink;
+        Link = link;
+        IdBook = idBook;
+    }
+
     protected Link(Parcel in) {
         IdLink = in.readInt();
         Link = in.readString();

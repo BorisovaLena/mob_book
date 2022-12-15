@@ -5,23 +5,13 @@ import android.os.Parcelable;
 
 public class Book implements Parcelable {
 
-    private int IdBook;
+    private Integer IdBook;
     private String TitleBook;
     private String Annotation;
     private String Summary;
     private String Image;
-    private int IdAuthor;
-    private int IdGenre;
-
-    protected Book(Parcel in) {
-        IdBook = in.readInt();
-        TitleBook = in.readString();
-        Annotation = in.readString();
-        Summary = in.readString();
-        Image = in.readString();
-        IdAuthor = in.readInt();
-        IdGenre = in.readInt();
-    }
+    private Integer IdAuthor;
+    private Integer IdGenre;
 
     public static final Creator<Book> CREATOR = new Creator<Book>() {
         @Override
@@ -35,7 +25,7 @@ public class Book implements Parcelable {
         }
     };
 
-    public Book(int idBook, String titleBook, String annotation, String summary, String image, int idAuthor, int idGenre) {
+    public Book(Integer idBook, String titleBook, String annotation, String summary, String image, int idAuthor, int idGenre) {
         IdBook = idBook;
         TitleBook = titleBook;
         Annotation = annotation;
@@ -43,6 +33,16 @@ public class Book implements Parcelable {
         Image = image;
         IdAuthor = idAuthor;
         IdGenre = idGenre;
+    }
+
+    protected Book(Parcel in) {
+        IdBook = in.readInt();
+        TitleBook = in.readString();
+        Annotation = in.readString();
+        Summary = in.readString();
+        Image = in.readString();
+        IdAuthor = in.readInt();
+        IdGenre = in.readInt();
     }
 
     @Override

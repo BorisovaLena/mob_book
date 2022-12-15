@@ -8,6 +8,12 @@ public class Genre implements Parcelable {
     private int IdGenre;
     private String TitleGenre;
 
+    public Genre(Integer idGenre, String titleGenre)
+    {
+        IdGenre = idGenre;
+        TitleGenre = titleGenre;
+    }
+
     protected Genre(Parcel in) {
         IdGenre = in.readInt();
         TitleGenre = in.readString();

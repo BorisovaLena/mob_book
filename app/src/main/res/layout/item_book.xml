@@ -33,23 +33,7 @@
         android:layout_marginTop="10dp"/>
 
 
-    <TextView
-        android:id="@+id/tv_Author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/Img"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="35dp"/>
 
-    <TextView
-        android:id="@+id/tv_GenresBook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/Img"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="60dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
