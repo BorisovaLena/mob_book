@@ -16,13 +16,6 @@ public class Page_Read extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_read);
 
-        arg = getIntent().getExtras();
-        book = arg.getParcelable(Book.class.getSimpleName());
-        TitleBook = findViewById(R.id.tv_TitleBook);
-        Summary = findViewById(R.id.tv_Text);
-
-        TitleBook.setText(book.getTitleBook());
-        Summary.setText(book.getSummary());
     }
 
     public void onClickBook(View v)
