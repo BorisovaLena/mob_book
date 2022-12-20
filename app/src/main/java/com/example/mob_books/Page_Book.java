@@ -62,5 +62,6 @@ public class Page_Book extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Page_Read.class);
         startActivity(intent);
+
     }
 }
