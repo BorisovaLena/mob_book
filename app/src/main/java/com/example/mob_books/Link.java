@@ -7,7 +7,7 @@ public class Link implements Parcelable {
 
     private Integer IdLink;
     private String Link;
-    private int IdBook;
+    private Integer IdBook;
 
     public Link(Integer idLink, String link, Integer idBook)
     {
@@ -54,7 +54,7 @@ public class Link implements Parcelable {
         return Link;
     }
 
-    public int getIdBook() {
+    public Integer getIdBook() {
         return IdBook;
     }
 
@@ -66,7 +66,7 @@ public class Link implements Parcelable {
         Link = link;
     }
 
-    public void setIdBook(int idBook) {
+    public void setIdBook(Integer idBook) {
         IdBook = idBook;
     }
 }
