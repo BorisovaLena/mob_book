@@ -25,14 +25,14 @@ public class Book implements Parcelable {
         }
     };
 
-    public Book(Integer idBook, String titleBook, String annotation, String summary, String image, String author, String genre) {
+    public Book(Integer idBook, String titleBook, String annotation, String summary, String image, String nameAuthor, String titleGenre) {
         IdBook = idBook;
         TitleBook = titleBook;
         Annotation = annotation;
         Summary = summary;
         Image = image;
-        NameAuthor = author;
-        TitleGenre = genre;
+        NameAuthor = nameAuthor;
+        TitleGenre = titleGenre;
     }
 
     protected Book(Parcel in) {

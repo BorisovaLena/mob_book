@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView ivProducts = findViewById(R.id.BD_Books);
+        ListView ivProducts = findViewById(R.id.ListBook);
         pAdapter = new Adapter(MainActivity.this, listBooks);
         ivProducts.setAdapter(pAdapter);
         new Get().execute();
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(Void... voids) {
             try
             {
-                URL url = new URL("https://ngknn.ru:5001/NGKNN/БорисоваЕА/api/Table_Books");
+                URL url = new URL("https://ngknn.ru:5000/NGKNN/БорисоваЕА/api/Table_Books");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder result = new StringBuilder();
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(s);
             try
             {
-                listBooks.clear();
+                //listBooks.clear();
                 JSONArray tempArray = new JSONArray(s);
                 for (int i = 0; i<tempArray.length(); i++)
                 {
