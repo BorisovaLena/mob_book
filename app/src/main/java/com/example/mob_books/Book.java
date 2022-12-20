@@ -10,8 +10,8 @@ public class Book implements Parcelable {
     private String Annotation;
     private String Summary;
     private String Image;
-    private Integer IdAuthor;
-    private Integer IdGenre;
+    private String NameAuthor;
+    private String TitleGenre;
 
     public static final Creator<Book> CREATOR = new Creator<Book>() {
         @Override
@@ -25,14 +25,14 @@ public class Book implements Parcelable {
         }
     };
 
-    public Book(Integer idBook, String titleBook, String annotation, String summary, String image, int idAuthor, int idGenre) {
+    public Book(Integer idBook, String titleBook, String annotation, String summary, String image, String author, String genre) {
         IdBook = idBook;
         TitleBook = titleBook;
         Annotation = annotation;
         Summary = summary;
         Image = image;
-        IdAuthor = idAuthor;
-        IdGenre = idGenre;
+        NameAuthor = author;
+        TitleGenre = genre;
     }
 
     protected Book(Parcel in) {
@@ -41,8 +41,8 @@ public class Book implements Parcelable {
         Annotation = in.readString();
         Summary = in.readString();
         Image = in.readString();
-        IdAuthor = in.readInt();
-        IdGenre = in.readInt();
+        NameAuthor = in.readString();
+        TitleGenre = in.readString();
     }
 
     @Override
@@ -57,11 +57,11 @@ public class Book implements Parcelable {
         parcel.writeString(Annotation);
         parcel.writeString(Summary);
         parcel.writeString(Image);
-        parcel.writeInt(IdAuthor);
-        parcel.writeInt(IdGenre);
+        parcel.writeString(NameAuthor);
+        parcel.writeString(TitleGenre);
     }
 
-    public int getIdBook() {
+    public Integer getIdBook() {
         return IdBook;
     }
 
@@ -81,15 +81,15 @@ public class Book implements Parcelable {
         return Image;
     }
 
-    public int getIdAuthor() {
-        return IdAuthor;
+    public String getNameAuthor() {
+        return NameAuthor;
     }
 
-    public int getIdGenre() {
-        return IdGenre;
+    public String getTitleGenre() {
+        return TitleGenre;
     }
 
-    public void setIdBook(int idBook) {
+    public void setIdBook(Integer idBook) {
         IdBook = idBook;
     }
 
@@ -109,11 +109,11 @@ public class Book implements Parcelable {
         Image = image;
     }
 
-    public void setIdAuthor(int idAuthor) {
-        IdAuthor = idAuthor;
+    public void setNameAuthor(String nameAuthor) {
+        NameAuthor = nameAuthor;
     }
 
-    public void setIdGenre(int idGenre) {
-        IdGenre = idGenre;
+    public void setTitleGenre(String titleGenre) {
+        TitleGenre = titleGenre;
     }
 }

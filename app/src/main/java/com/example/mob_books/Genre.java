@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Genre implements Parcelable {
 
-    private int IdGenre;
+    private Integer IdGenre;
     private String TitleGenre;
 
     public Genre(Integer idGenre, String titleGenre)
@@ -42,7 +42,7 @@ public class Genre implements Parcelable {
         parcel.writeString(TitleGenre);
     }
 
-    public int getIdGenre() {
+    public Integer getIdGenre() {
         return IdGenre;
     }
 
@@ -50,7 +50,7 @@ public class Genre implements Parcelable {
         return TitleGenre;
     }
 
-    public void setIdGenre(int idGenre) {
+    public void setIdGenre(Integer idGenre) {
         IdGenre = idGenre;
     }
 

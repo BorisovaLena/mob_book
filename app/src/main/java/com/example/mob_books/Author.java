@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Author implements Parcelable {
 
-    private int IdAuthor;
+    private Integer IdAuthor;
     private String Author;
 
     public Author(Integer idAuthor, String author)
@@ -42,7 +42,7 @@ public class Author implements Parcelable {
         }
     };
 
-    public int getIdAuthor() {
+    public Integer getIdAuthor() {
         return IdAuthor;
     }
 
@@ -50,7 +50,7 @@ public class Author implements Parcelable {
         return Author;
     }
 
-    public void setIdAuthor(int idAuthor) {
+    public void setIdAuthor(Integer idAuthor) {
         IdAuthor = idAuthor;
     }
 

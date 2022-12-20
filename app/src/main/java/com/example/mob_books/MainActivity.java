@@ -75,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
                             productJson.getString("Annotation"),
                             productJson.getString("Summary"),
                             productJson.getString("Image"),
-                            productJson.getInt("IdAuthor"),
-                            productJson.getInt("IdGenre")
+                            productJson.getString("NameAuthor"),
+                            productJson.getString("TitleGenre")
                     );
                     listBooks.add(tempBook);
                     pAdapter.notifyDataSetInvalidated();

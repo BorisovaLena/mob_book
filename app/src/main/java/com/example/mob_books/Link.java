@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class Link implements Parcelable {
 
-    private int IdLink;
+    private Integer IdLink;
     private String Link;
     private int IdBook;
 
@@ -46,7 +46,7 @@ public class Link implements Parcelable {
         parcel.writeInt(IdBook);
     }
 
-    public int getIdLink() {
+    public Integer getIdLink() {
         return IdLink;
     }
 
@@ -58,7 +58,7 @@ public class Link implements Parcelable {
         return IdBook;
     }
 
-    public void setIdLink(int idLink) {
+    public void setIdLink(Integer idLink) {
         IdLink = idLink;
     }
 

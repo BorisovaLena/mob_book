@@ -2,6 +2,7 @@ package com.example.mob_books;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -40,13 +41,23 @@ public class Adapter extends BaseAdapter {
 
         @SuppressLint("ViewHolder") View v = View.inflate(mContext, R.layout.item_book,null);
         TextView TitleBook = v.findViewById(R.id.tv_TitleBook);
-        //TextView Author = v.findViewById(R.id.tv_Author);
-        //TextView GenresBook = v.findViewById(R.id.tv_GenresBook);
+        TextView NameAuthor = v.findViewById(R.id.tv_Author);
+        TextView TitleGenre = v.findViewById(R.id.tv_Genre);
         ImageView Image = v.findViewById(R.id.Img);
         Book book = bookList.get(position);
         TitleBook.setText(book.getTitleBook());
+        NameAuthor.setText(book.getNameAuthor());
+        TitleGenre.setText(book.getTitleGenre());
         DecodeImg DI = new DecodeImg(mContext);
         Image.setImageBitmap(DI.getUserImage(book.getImage()));
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, Page_Book.class);
+                intent.putExtra(Book.class.getSimpleName(), book);
+                mContext.startActivity(intent);
+            }
+        });
         return v;
     }
 }
