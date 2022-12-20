@@ -7,11 +7,11 @@ public class Book implements Parcelable {
 
     private Integer IdBook;
     private String TitleBook;
-    private String Annotation;
+    private String Annitation;
     private String Summary;
     private String Image;
-    private String NameAuthor;
-    private String TitleGenre;
+    private String Author;
+    private String Genre;
 
     public static final Creator<Book> CREATOR = new Creator<Book>() {
         @Override
@@ -28,21 +28,21 @@ public class Book implements Parcelable {
     public Book(Integer idBook, String titleBook, String annotation, String summary, String image, String nameAuthor, String titleGenre) {
         IdBook = idBook;
         TitleBook = titleBook;
-        Annotation = annotation;
+        Annitation = annotation;
         Summary = summary;
         Image = image;
-        NameAuthor = nameAuthor;
-        TitleGenre = titleGenre;
+        Author = nameAuthor;
+        Genre = titleGenre;
     }
 
     protected Book(Parcel in) {
         IdBook = in.readInt();
         TitleBook = in.readString();
-        Annotation = in.readString();
+        Annitation = in.readString();
         Summary = in.readString();
         Image = in.readString();
-        NameAuthor = in.readString();
-        TitleGenre = in.readString();
+        Author = in.readString();
+        Genre = in.readString();
     }
 
     @Override
@@ -54,11 +54,11 @@ public class Book implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(IdBook);
         parcel.writeString(TitleBook);
-        parcel.writeString(Annotation);
+        parcel.writeString(Annitation);
         parcel.writeString(Summary);
         parcel.writeString(Image);
-        parcel.writeString(NameAuthor);
-        parcel.writeString(TitleGenre);
+        parcel.writeString(Author);
+        parcel.writeString(Genre);
     }
 
     public Integer getIdBook() {
@@ -69,8 +69,8 @@ public class Book implements Parcelable {
         return TitleBook;
     }
 
-    public String getAnnotation() {
-        return Annotation;
+    public String getAnnitation() {
+        return Annitation;
     }
 
     public String getSummary() {
@@ -81,12 +81,12 @@ public class Book implements Parcelable {
         return Image;
     }
 
-    public String getNameAuthor() {
-        return NameAuthor;
+    public String getAuthor() {
+        return Author;
     }
 
-    public String getTitleGenre() {
-        return TitleGenre;
+    public String getGenre() {
+        return Genre;
     }
 
     public void setIdBook(Integer idBook) {
@@ -97,8 +97,8 @@ public class Book implements Parcelable {
         TitleBook = titleBook;
     }
 
-    public void setAnnotation(String annotation) {
-        Annotation = annotation;
+    public void setAnnitation(String annitation) {
+        Annitation = annitation;
     }
 
     public void setSummary(String summary) {
@@ -109,11 +109,11 @@ public class Book implements Parcelable {
         Image = image;
     }
 
-    public void setNameAuthor(String nameAuthor) {
-        NameAuthor = nameAuthor;
+    public void setAuthor(String author) {
+        Author = author;
     }
 
-    public void setTitleGenre(String titleGenre) {
-        TitleGenre = titleGenre;
+    public void setGenre(String genre) {
+        Genre = genre;
     }
 }

@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(Void... voids) {
             try
             {
-                URL url = new URL("https://ngknn.ru:5000/NGKNN/БорисоваЕА/api/Table_Books");
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/БорисоваЕА/api/Table_Books");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 StringBuilder result = new StringBuilder();
@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
                     Book tempBook = new Book(
                             productJson.getInt("IdBook"),
                             productJson.getString("TitleBook"),
-                            productJson.getString("Annotation"),
+                            productJson.getString("Annitation"),
                             productJson.getString("Summary"),
                             productJson.getString("Image"),
-                            productJson.getString("NameAuthor"),
-                            productJson.getString("TitleGenre")
+                            productJson.getString("Author"),
+                            productJson.getString("Genre")
                     );
                     listBooks.add(tempBook);
                     pAdapter.notifyDataSetInvalidated();

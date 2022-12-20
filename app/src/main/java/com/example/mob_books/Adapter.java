@@ -41,18 +41,18 @@ public class Adapter extends BaseAdapter {
 
         @SuppressLint("ViewHolder") View v = View.inflate(mContext, R.layout.item_book,null);
         TextView TitleBook = v.findViewById(R.id.tv_TitleBook);
-        TextView NameAuthor = v.findViewById(R.id.tv_Author);
-        TextView TitleGenre = v.findViewById(R.id.tv_Genre);
+        TextView Author = v.findViewById(R.id.tv_Author);
+        TextView Genre = v.findViewById(R.id.tv_Genre);
         ImageView Image = v.findViewById(R.id.Img);
         Book book = bookList.get(position);
         TitleBook.setText(book.getTitleBook());
-        NameAuthor.setText(book.getNameAuthor());
-        TitleGenre.setText(book.getTitleGenre());
+        Author.setText(book.getAuthor());
+        Genre.setText(book.getGenre());
         DecodeImg DI = new DecodeImg(mContext);
         Image.setImageBitmap(DI.getUserImage(book.getImage()));
         v.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(mContext, Page_Book.class);
                 intent.putExtra(Book.class.getSimpleName(), book);
                 mContext.startActivity(intent);
