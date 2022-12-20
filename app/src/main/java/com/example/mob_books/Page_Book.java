@@ -57,11 +57,7 @@ public class Page_Book extends AppCompatActivity {
         Annotation.setText(book.getAnnitation());
 
         DecodeImg decodeImage = new DecodeImg(Page_Book.this);
-        Bitmap userImage = decodeImage.getUserImage(book.getImage());
-        Image.setImageBitmap(userImage);
-        if(!book.getImage().equals("null")){
-            bitmap = userImage;
-        }
+        Image.setImageBitmap(decodeImage.getUserImage(book.getImage()));
     }
 
     public void onClickBack(View v)
