@@ -131,6 +131,8 @@
                 android:layout_marginTop="27dp"
                 android:width="350dp"
                 android:textSize="16dp"
+                android:autoLink="web"
+                android:text="https://yandex.ru/video/preview/9065804588150708839"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
